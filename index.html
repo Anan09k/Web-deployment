@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Detection AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Vehicle Detection AI</h1>
+        <p>Real-time vehicle detection using deep learning</p>
+    </header>
+    
+    <section id="features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Real-time vehicle recognition</li>
+            <li>High accuracy using YOLOv5</li>
+            <li>Works with images and live video</li>
+        </ul>
+    </section>
+    
+    <section id="use-cases">
+        <h2>Use Cases</h2>
+        <p>Our model can be used for:</p>
+        <ul>
+            <li>Traffic monitoring</li>
+            <li>Smart parking systems</li>
+            <li>Security surveillance</li>
+        </ul>
+    </section>
+    
+    <section id="demo">
+        <h2>Try It Out</h2>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button onclick="uploadImage()">Upload & Detect</button>
+        <br>
+        <img id="preview" style="display:none; max-width: 100%; margin-top: 10px;"/>
+    </section>
+    
+    
+    <script>
+        async function uploadImage() {
+            const fileInput = document.getElementById('imageUpload');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select an image.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("https://your-backend-url.azurewebsites.net/predict", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.image) {
+                    document.getElementById("preview").src = "data:image/jpeg;base64," + data.image;
+                    document.getElementById("preview").style.display = 'block';
+                } else {
+                    alert("Error: " + data.error);
+                }
+            } catch (error) {
+                alert("Failed to upload image.");
+            }
+        }
+    </script>
+</body>
+</html>
