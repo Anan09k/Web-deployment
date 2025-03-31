@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMIFOST 2025</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background: #004c8c; color: white; padding: 20px; font-size: 28px; text-align: center; }
+        .container { padding: 20px; text-align: center; }
+        .content { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .hidden { display: none; }
+        button { padding: 10px 20px; background: #ff6600; color: white; border: none; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background: #e65c00; }
+        .highlight { color: #004c8c; font-weight: bold; }
+        footer { background: #004c8c; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>AMIFOST 2025 - The Future of Food Science & Technology</header>
+    <div class="container">
+        <div class="content">
+            <p>Welcome to <span class="highlight">AMIFOST 2025</span>, organized by <strong>Amity Institute of Food Technology</strong>, Amity University, Noida.</p>
+            <p>This international conference focuses on <strong>innovations</strong>, <strong>sustainability</strong>, and <strong>health</strong> in food science and technology.</p>
+            <img src="image.png" alt="Felicitation of Guest">
+            <button onclick="toggleDetails()">More Details</button>
+            <div id="details" class="hidden">
+                <h3>Event Highlights</h3>
+                <p><strong>Chief Guest:</strong> Mr. Siraj Hussain, IAS</p>
+                <p><strong>Keynote Speaker:</strong> Dr. Manfred Buchele</p>
+                <p><strong>Topics:</strong> Precision farming, sustainable packaging, non-thermal food processing</p>
+                <p><strong>Panel Discussions:</strong> Food security, AI-driven food tech, alternative proteins</p>
+                <p><strong>Networking Sessions:</strong> Meet industry experts, researchers, and academicians</p>
+                <h3>Conference Sessions</h3>
+                <p>The conference covered a range of critical topics including the role of AI in food technology, innovative processing methods, and the future of food security. Key sessions included:</p>
+                <ul>
+                    <li>Advancements in Non-Thermal Food Processing</li>
+                    <li>Challenges and Opportunities in Sustainable Packaging</li>
+                    <li>Role of Precision Farming in Climate-Resilient Agriculture</li>
+                    <li>Global Perspectives on Food Security and Nutrition</li>
+                </ul>
+                <h3>Awards & Recognitions</h3>
+                <p>The conference also honored distinguished personalities in the field of food science. The Chief Guest, Mr. Siraj Hussain, was felicitated for his outstanding contributions to the food processing sector.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 AMIFOST. All rights reserved. | Contact: info@amifost2025.com</p>
+    </footer>
+    <script>
+        function toggleDetails() {
+            var details = document.getElementById("details");
+            if (details.classList.contains("hidden")) {
+                details.classList.remove("hidden");
+            } else {
+                details.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
